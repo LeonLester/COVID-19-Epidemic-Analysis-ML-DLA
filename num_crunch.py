@@ -80,3 +80,13 @@ for i in range(2,len(confirmed_global_dates_df.columns))
     avg_deaths[i-1] = deaths_global_dates_df[i-1].sum()/(i-1)
     avg_recoverd[i-1] = recovered_global_dates_df[i-1].sum()/(i-1)
     
+    #moving average
+    if(i>2):
+        moving_avg_confirmed[i-1] = moving_avg_confirmed[i-1].sum()/(i-1)
+        moving_avg_deaths[i-1] = moving_avg_deaths[i-1].sum()/(i-1)
+        moving_avg_recoverd[i-1] = moving_avg_recoverd[i-1].sum()/(i-1)
+        
+    if(i==2):
+        moving_avg_confirmed[i-1] = avg_confirmed[i-1]
+        moving_avg_deaths[i-1] = avg_deaths[i-1]
+        moving_avg_recoverd[i-1] = avg_recoverd[i-1] 
