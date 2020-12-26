@@ -3,10 +3,12 @@
 This project was created for the Decision Theory lecture in CEID Upatras in 2020 winter semester.
 
 
+Details to be added.
+
 Authors
 ----
-John Sart
+Ioannis Sartasis ()
 
-Leonidas Karagiannis (leonidask914@gmail.com)
+Leonidas Karagiannis (st1064036@ceid.upatras.gr)
 
-Petros 
+Petros Mpehrakis (ceid4780@upnet.gr)
