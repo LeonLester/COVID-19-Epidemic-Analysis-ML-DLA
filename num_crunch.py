@@ -65,3 +65,18 @@ active_latest = confirmed_latest-death_latest-recovered_latest
 death_to_confirmed_ratio_global = death_latest/confirmed_latest
 recovered_to_confirmed_ratio_global = recovered_latest/confirmed_latest
 
+
+
+# daily change confirmed,death,recoverd
+
+
+for i in range(2,len(confirmed_global_dates_df.columns))
+    daily_increase_confirmed[i-1] = confirmed_global_dates_df[i-1]-confirmed_global_dates_df[i-2]
+    daily_increase_deaths[i-1] = deaths_global_dates_df[i-1]-deaths_global_dates_df[i-2]
+    daily_increase_recoverd[i-1] = recovered_global_dates_df[i-1]-recovered_global_dates_df[i-2]
+    #
+    # moving average
+    moving_avg_confirmed[i-1] = confirmed_global_dates_df[i-1].sum()/(i-1)
+    moving_avg_deaths[i-1] = deaths_global_dates_df[i-1].sum()/(i-1)
+    moving_avg_recoverd[i-1] = recovered_global_dates_df[i-1].sum()/(i-1)
+    
