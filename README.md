@@ -6,5 +6,7 @@ This project was created for the Decision Theory lecture in CEID Upatras in 2020
 Authors
 ----
 John Sart
+
 Leonidas Karagiannis (leonidask914@gmail.com)
+
 Petros 
