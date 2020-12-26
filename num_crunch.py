@@ -74,9 +74,9 @@ for i in range(2,len(confirmed_global_dates_df.columns))
     daily_increase_confirmed[i-1] = confirmed_global_dates_df[i-1]-confirmed_global_dates_df[i-2]
     daily_increase_deaths[i-1] = deaths_global_dates_df[i-1]-deaths_global_dates_df[i-2]
     daily_increase_recoverd[i-1] = recovered_global_dates_df[i-1]-recovered_global_dates_df[i-2]
-    #
-    # moving average
-    moving_avg_confirmed[i-1] = confirmed_global_dates_df[i-1].sum()/(i-1)
-    moving_avg_deaths[i-1] = deaths_global_dates_df[i-1].sum()/(i-1)
-    moving_avg_recoverd[i-1] = recovered_global_dates_df[i-1].sum()/(i-1)
+    
+    #average
+    avg_confirmed[i-1] = confirmed_global_dates_df[i-1].sum()/(i-1)
+    avg_deaths[i-1] = deaths_global_dates_df[i-1].sum()/(i-1)
+    avg_recoverd[i-1] = recovered_global_dates_df[i-1].sum()/(i-1)
     
