@@ -7,7 +7,7 @@ Details to be added.
 
 Authors
 ----
-Ioannis Sartasis ()
+Ioannis Sartabakos (johnsart@outlook.com.gr)
 
 Leonidas Karagiannis (st1064036@ceid.upatras.gr)
 
