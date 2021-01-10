@@ -11,4 +11,4 @@ Ioannis Sartabakos (johnsart@outlook.com.gr)
 
 Leonidas Karagiannis (st1064036@ceid.upatras.gr)
 
-Petros Mpehrakis (ceid4780@upnet.gr)
+Petros Behrakis (ceid4780@upnet.gr)
