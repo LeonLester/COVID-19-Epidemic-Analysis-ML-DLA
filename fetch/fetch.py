@@ -153,6 +153,13 @@ def moving_average(data, window_size):
             moving_average.append(np.mean(data[i:len(data)]))
     return moving_average
 
+def getDiscreteCountry(dataframe,country):
+    countrydata = dataframe.copy()
+    cols = len(dataframe.columns)
+    for i in range(5, cols):
+        countrydata.iloc[:, i] = dataframe.loc[dataframe['Country/Region'] == country].sum(axis=[:, i])
+    return countrydata
+
 # get the index of the country from the dataframe
 def getCountryIndex(dataframe, country):
     return dataframe.index[dataframe['Country/Region'] == country].tolist()
