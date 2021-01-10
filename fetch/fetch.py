@@ -78,6 +78,7 @@ def getData():
     return df1, df2, df3, df4, df5, df6, df7, df8
 
 
+# functions that work with dataframes
 # zitoumeno 3
 def getDates(df):
     dates = df.drop(columns=['Province/State', 'Country/Region', 'Lat', 'Long'])
@@ -132,6 +133,7 @@ def get_daily_total(data):
     return d
 
 
+# functions that work with lists
 def daily_increase(data):
     d = []
     for i in range(len(data)):
@@ -151,6 +153,21 @@ def moving_average(data, window_size):
             moving_average.append(np.mean(data[i:len(data)]))
     return moving_average
 
+# get the index of the country from the dataframe
+def getCountryIndex(dataframe, country):
+    return dataframe.index[dataframe['Country/Region'] == country].tolist()
+
+# get the data from a list
+def getCountryData(list, countryindex):
+    return list[countryindex]
+
+
+def plotCountryData(country):
+    data = getCountryData
+
+
+def (dataframe,country):
+
 
 # Main
 
@@ -161,6 +178,12 @@ confirmed_global_df, deaths_global_df, recovered_global_df, confirmed_US_df, dea
 
 # dataframes that show the daily increase instead of the sum up until that day
 
+countryList = confirmed_global_df['Country/Region'].unique().tolist()
+
+countryindices = []
+
+for country in countryList:
+    countryindices.append(getCountryIndex(confirmed_global_df, country))
 
 # confirmed cases
 daily_increase_confirmed = get_daily_increase(confirmed_global_df)
@@ -178,6 +201,9 @@ moving_avg_deaths = get_moving_average(daily_increase_deaths, window)
 moving_avg_recovered = get_moving_average(daily_increase_recovered, window)
 
 print("Test")
+
+################ kodikas gounaridis ###############################
+
 
 # get total for up to each day
 latest_data_df.head()
@@ -214,7 +240,9 @@ for i in dates:
 
 # confirmed cases
 world_daily_increase = daily_increase(world_cases)
+# every day, the average of the total global confirmed cases of the last window days
 world_confirmed_avg = moving_average(world_cases, window)
+# every day, the average of the daily global confirmed cases of the last window days
 world_daily_increase_avg = moving_average(world_daily_increase, window)
 
 # deaths
