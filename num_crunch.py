@@ -68,25 +68,34 @@ recovered_to_confirmed_ratio_global = recovered_latest/confirmed_latest
 
 
 # daily change confirmed,death,recoverd
+daily_increase_confirmed = []
+daily_increase_deaths = []
+daily_increase_recoverd = []
+moving_avg_confirmed = []
+avg_confirmed = []
+avg_deaths = []
+avg_recoverd = []
+moving_avg_deaths = []
+moving_avg_recoverd = []
 
 
-for i in range(2,len(confirmed_global_dates_df.columns))
-    daily_increase_confirmed[i-1] = confirmed_global_dates_df[i-1]-confirmed_global_dates_df[i-2]
-    daily_increase_deaths[i-1] = deaths_global_dates_df[i-1]-deaths_global_dates_df[i-2]
-    daily_increase_recoverd[i-1] = recovered_global_dates_df[i-1]-recovered_global_dates_df[i-2]
+for i in range(2,len(confirmed_global_dates_df.columns)):
+    daily_increase_confirmed.append(confirmed_global_dates_df[i-1]-confirmed_global_dates_df[i-2])
+    daily_increase_deaths.append(deaths_global_dates_df[i-1]-deaths_global_dates_df[i-2])
+    daily_increase_recoverd.append(recovered_global_dates_df[i-1]-recovered_global_dates_df[i-2])
     
     #average
-    avg_confirmed[i-1] = confirmed_global_dates_df[i-1].sum()/(i-1)
-    avg_deaths[i-1] = deaths_global_dates_df[i-1].sum()/(i-1)
-    avg_recoverd[i-1] = recovered_global_dates_df[i-1].sum()/(i-1)
+    avg_confirmed.append(confirmed_global_dates_df[i-1].sum()/(i-1))
+    avg_deaths.append(deaths_global_dates_df[i-1].sum()/(i-1))
+    avg_recoverd.append(recovered_global_dates_df[i-1].sum()/(i-1))
     
     #moving average
     if(i>2):
-        moving_avg_confirmed[i-1] = moving_avg_confirmed[i-1].sum()/(i-1)
-        moving_avg_deaths[i-1] = moving_avg_deaths[i-1].sum()/(i-1)
-        moving_avg_recoverd[i-1] = moving_avg_recoverd[i-1].sum()/(i-1)
+        moving_avg_confirmed.append(moving_avg_confirmed[i-1].sum()/(i-1))
+        moving_avg_deaths.append(moving_avg_deaths[i-1].sum()/(i-1))
+        moving_avg_recoverd.append(moving_avg_recoverd[i-1].sum()/(i-1))
         
     if(i==2):
-        moving_avg_confirmed[i-1] = avg_confirmed[i-1]
-        moving_avg_deaths[i-1] = avg_deaths[i-1]
-        moving_avg_recoverd[i-1] = avg_recoverd[i-1] 
+        moving_avg_confirmed.append(avg_confirmed[i-1])
+        moving_avg_deaths.append(avg_deaths[i-1])
+        moving_avg_recoverd.append(avg_recoverd[i-1]) 
