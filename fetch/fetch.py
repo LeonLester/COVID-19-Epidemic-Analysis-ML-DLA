@@ -1,5 +1,4 @@
 from links import link_dict
-import data
 import warnings
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -18,13 +17,13 @@ plt.style.use('fivethirtyeight')
 # %matplotlib inline // cli for now
 # set_matplotlib_formats('retina')
 warnings.filterwarnings("ignore")
-
-# yesterday = date.today() - timedelta(days=1)
-# most_recent_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/' + yesterday.strftime('%m-%d-%Y') + '.csv'
-# most_recent_global_df = pd.read_csv(latest_url)
-# print(latest_global_df.head())
-
 '''
+yesterday = date.today() - timedelta(days=1)
+most_recent_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/' + yesterday.strftime('%m-%d-%Y') + '.csv'
+most_recent_global_df = pd.read_csv(latest_url)
+print(latest_global_df.head())
+
+
 positive_global_dates_df = positive_global_df.drop(columns=['Province/State', 'Country/Region', 'Lat', 'Long'])
 deaths_global_dates_df = deaths_global_df.drop(columns=['Province/State', 'Country/Region', 'Lat', 'Long'])
 recovered_global_dates_df = recovered_global_df.drop(columns=['Province/State', 'Country/Region', 'Lat', 'Long'])
@@ -152,14 +151,14 @@ def moving_average(data, window_size):
         else:
             moving_average.append(np.mean(data[i:len(data)]))
     return moving_average
-
+'''
 def getDiscreteCountry(dataframe,country):
     countrydata = dataframe.copy()
     cols = len(dataframe.columns)
     for i in range(5, cols):
         countrydata.iloc[:, i] = dataframe.loc[dataframe['Country/Region'] == country].sum(axis=[:, i])
     return countrydata
-
+'''
 # get the index of the country from the dataframe
 def getCountryIndex(dataframe, country):
     return dataframe.index[dataframe['Country/Region'] == country].tolist()
@@ -173,7 +172,7 @@ def plotCountryData(country):
     data = getCountryData
 
 
-def (dataframe,country):
+# def (dataframe,country):
 
 
 # Main
